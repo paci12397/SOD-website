@@ -8,21 +8,26 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
+
     <style>
-        nav {
+        .vp {
     background-color:white;
 padding: 10px;
     text-align: center;
      position: fixed; 
-     top: 0; 
-    left: 0;
-    width: 100%;    
+     top: 0px; 
+    left: 600px;    
     z-index: 1000;
+    font-size: x-large;
   }
 
-  nav a {
+ .vp a {
+    background-color: white;
+    padding: 10px;
+position: relative;
+margin-top: 0%;
+top: 0%;
     color: black;
-    margin:15px;
     text-decoration: none;
     font-weight: bold;
 
@@ -78,16 +83,16 @@ img{
    height: 150px;
 
 }
-.div{
-    position: relative;
-    left: 0;
-    right: 0%;
-    width: 150px;
-    height: 150px;
-    margin: 0 outo;
-    nav-up: auto;
+/* .div{ */
+    /* position: relative; */
+    /* left: 0; */
+    /* right: 0%; */
+    /* width: 150px; */
+    /* height: 150px; */
+    /* margin: 0 outo; */
+    /* nav-up: auto; */
 
-}
+/* } */
 .container{
     position: relative;
     padding: 0px;
@@ -97,25 +102,51 @@ img{
     width: 150px;
     height: auto;
 
+margin-left: 40px;
+    
+
 }
+/* image-top{ */
+    /* display: block/; */
+    /* width: 150px; */
+    /* height: 150px; */
+    /* position: relative; */
+    /* top: 0%; */
 
 
+/* } */
+.footer{
+    
+}
+.vp a{
+    margin-bottom: 200 px;
+
+}
+.bb{
+    margin-top: 50px;
+    margin-left: 40px;
+}
+.po{
+    margin-left: 880px;
+}
+.k i{
+    margin-left: 40px;
+}
     </style>
 </head>
 <body>
 <div class="container">
-    <img src="../assets/Capture d'écran 2025-05-06 031823.png" alt="my image" width="150" height="150">
+    <img src="../assets/Capture d'écran 2025-05-06 031823.png" alt="my image" width="150" height="150" class="margin-top">
 </div>
     
-
-        <nav>
+        <div class="vp" style="margin-top: 40px;">
         <a href="home.html">home</a>
           <a href="about.html">about</a>
           <a href="skills.html">skills</a>
                 <a href="contact.html">contact</a>
                 <a href="login.html">login</a>
                 <a href="blogs.html">blogs</a>
-        </nav>
+        </div>
 
 
     <h1>we are stronger team of developers to</h1>
@@ -124,16 +155,16 @@ img{
 
 
     <footer>
-        <h5>Email : mushimirepacifique78@gmai.come</h5>
-            <p>Tel : 0786099315</p>
-            <p>District : kigali city</p>
-            <center>
-            <p>&copy;2025 website team developers</p>
-        </center>
+        <p class="bb">Email : mushimirepacifique78@gmai.come
+            <br>Tel : 0786099315
+            <br>District : kigali city
+            
+            <p class="po">&copy;2025 website team developers</p>
+        </p><p class="k">
             <i class='bx bxl-facebook-circle'></i>
             <i class='bx bxl-twitter'></i>
             <i class='bx bxl-whatsapp'></i>
-            <i class='bx bxl-instagram'></i>           
+            <i class='bx bxl-instagram'></i> </p>          
         </footer>
 
 
