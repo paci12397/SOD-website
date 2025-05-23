@@ -3,22 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="../css.css/">
     <title>homepage</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
 
     <style>
+        body{
+            padding: 0;
+        }
+        
         .vp {
+            
     background-color:white;
 padding: 10px;
     text-align: center;
      position: fixed; 
      top: 0px; 
     left: 600px;    
-    z-index: 1000;
-    font-size: x-large;
+    z-index: 100px;
+    font-size: large;
+    
   }
 
  .vp a {
@@ -30,20 +36,21 @@ top: 0%;
     color: black;
     text-decoration: none;
     font-weight: bold;
-
+font-size: large;
   }
     </style>
     <style>
-        h1{
+        .p{
             text-align: center;
             text-transform: lowercase;
             text-decoration: none;
         }
         
-h2{
+p{
     text-align: center;
     text-transform: lowercase;
     text-decoration: none;
+    
 }
 
 h3{
@@ -95,23 +102,36 @@ margin-left: 40px;
 
 
 /* } */
-.footer{
+
     
-}
+
 .vp a{
-    margin-bottom: 200 px;
+    margin-bottom: 200;
 
 }
-.bb{
-    margin-top: 50px;
-    margin-left: 40px;
-}
+ 
 .po{
     margin-left: 880px;
 }
 .k i{
     margin-left: 40px;
 }
+footer{
+      padding: 30px;
+      background-color: #f1f1f1;
+      text-align: center;
+      margin-left: -40px;
+      margin-top: 100px;
+}
+.bb{
+    margin-left: -930px;
+}
+.k{
+    margin-left: -930px;
+}
+
+
+ 
     </style>
 </head>
 <body>
@@ -126,12 +146,18 @@ margin-left: 40px;
                 <a href="contact.html">contact</a>
                 <a href="login.html">login</a>
                 <a href="blogs.html">blogs</a>
+                <a href="sign-up.html">sign-up</a>
+                
         </div>
 
 
-    <h1>we are stronger team of developers to</h1>
-    <h2>enable effective collaboration,knowlege sharing and efficient probrem solving 
-      <br> ultimutely leading to higher quality software and faster project completion</h2><br><br>
+        <div class="d">
+            <p>we are stronger team to</p><br>
+            <p>enable to efective collaboration,knowledge sharing and efficiente problem solving<br>
+                ultimetily,leading to higher quality software and faster project completion<br>
+            </p>
+
+        </div>
 
 
     <footer>
@@ -147,7 +173,6 @@ margin-left: 40px;
             <i class='bx bxl-instagram'></i> </p>          
         </footer>
 
-
-    
+      
 </body>
 </html>
