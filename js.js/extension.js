@@ -1,6 +1,86 @@
 
+const internalPages = {
+    "home": "home.html",
+    "about": "about.html",
+    "skills": "skills.html",
+    "contact": "contact.html",
+    "login": "login.html",
+    "blogs": "blogs.html",
+    "sign-up": "sign-up.html"
+  };
+
+  const externalSites = {
+    "google": "https://www.google.com",
+    "youtube": "https://www.youtube.com",
+    "tiktok": "https://www.tiktok.com",
+    "facebook": "https://www.facebook.com",
+    "instagram": "https://www.instagram.com",
+    "opera mini": "https://www.opera.com/mobile/mini",
+    "twitter": "https://www.twitter.com",
+    "whatsapp": "https://www.whatsapp.com"
+  };
+
+  const suggestionKeywords = [
+    "new song",
+    "latest news",
+    "top videos",
+    "funny memes",
+    "movie trailers",
+    "best games",
+    "job alerts"
+  ];
+
+  function performSearch() {
+    const query = document.getElementById("searchInput").value.toLowerCase();
+
+    for (const [key, url] of Object.entries(internalPages)) {
+      if (query.includes(key)) {
+        window.location.href = url;
+        return;
+      }
+    }
+
+    for (const [key, link] of Object.entries(externalSites)) {
+      if (query.includes(key)) {
+        window.open(link, "_blank");
+        return;
+      }
+    }
+
+    alert("Page not found. Try keywords like 'home', 'about', 'google', 'youtube'...");
+  }
+
+  function showSuggestions() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const suggestionsList = document.getElementById("suggestionsList");
+    suggestionsList.innerHTML = "";
+
+    if (input.length === 0) return;
+
+    const filtered = suggestionKeywords.filter(item => item.startsWith(input));
+
+    filtered.forEach(suggestion => {
+      const li = document.createElement("li");
+      li.textContent = suggestion;
+      li.onclick = function () {
+        document.getElementById("searchInput").value = suggestion;
+        suggestionsList.innerHTML = "";
+      };
+      suggestionsList.appendChild(li);
+    });
+  }
   
+  //load//
+
   
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("main-content").style.display = "block";
+    }, 2000); 
+  });
+
+
 
 //blogs post//
 
@@ -110,7 +190,7 @@
           <button onclick="alert('Liked!')">Like</button>
           <button onclick="alert('Comment feature coming soon')">Comment</button>
           <button onclick="alert('Shared!')">Share</button>
-          <button onclick="deletePost(${post.id})" style="background-color:#dc3545;color:white;">Delete</button>
+          
         `;
         div.appendChild(actions);
 
@@ -137,5 +217,83 @@
   
 
 
+    //seach funnctionaliyt//
 
-  
+
+  function searchPosts() {
+  const query = document.getElementById("searchInput").value.toLowerCase().trim();
+  const posts = JSON.parse(localStorage.getItem("posts")) || [];
+  const results = posts.filter(post =>
+    post.text && post.text.toLowerCase().includes(query)
+  );
+
+  blogPosts.innerHTML = "";
+
+  const fallbackDiv = document.getElementById("googleFallback");
+  fallbackDiv.innerHTML = ""; // Reset Google link
+
+  if (results.length === 0) {
+    blogPosts.innerHTML = "<p>No matching blog posts found.</p>";
+    fallbackDiv.innerHTML = `
+      <a href="https://www.google.com/search?q=${encodeURIComponent(query)}" target="_blank">
+        Search "${query}" on Google instead
+      </a>
+    `;
+    return;
+  }
+
+  results.forEach(post => {
+    const div = document.createElement("div");
+    div.style.marginTop = "15px";
+    div.style.padding = "10px";
+    div.style.border = "1px solid #ccc";
+    div.style.borderRadius = "5px";
+    div.style.backgroundColor = "#f9f9f9";
+
+    const time = document.createElement("small");
+    time.textContent = `Posted on: ${post.time}`;
+    div.appendChild(time);
+
+    if (post.text) {
+      const p = document.createElement("p");
+      p.textContent = post.text;
+      div.appendChild(p);
+    }
+
+    if (post.images && post.images.length > 0) {
+      const imgContainer = document.createElement("div");
+      imgContainer.style.display = "flex";
+      imgContainer.style.flexWrap = "wrap";
+      imgContainer.style.gap = "10px";
+
+      post.images.forEach(img => {
+        const image = document.createElement("img");
+        image.src = img.url;
+        image.style.width = "120px";
+        image.style.height = "90px";
+        image.style.objectFit = "cover";
+        image.style.border = "1px solid #ccc";
+        image.style.borderRadius = "5px";
+        imgContainer.appendChild(image);
+      });
+
+      div.appendChild(imgContainer);
+    }
+
+    const actions = document.createElement("div");
+    actions.className = "action-buttons";
+    actions.innerHTML = `
+      <button onclick="alert('Liked!')">Like</button>
+      <button onclick="alert('Comment feature coming soon')">Comment</button>
+      <button onclick="alert('Shared!')">Share</button>
+    `;
+    div.appendChild(actions);
+
+    blogPosts.appendChild(div);
+  });
+}
+
+
+
+ //store//
+ 
