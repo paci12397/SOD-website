@@ -51,12 +51,12 @@ margin-left: 10px;}
     .search-bar input {
       border-radius: 25px;
       padding: 8px 15px;
-      width: 250px;
+      width: 230px;
     }
     .upload-section, .post-section {
       background: rgb(255, 255, 255);
       padding: 40px;
-      margin: 30px;
+      margin: 25px;
       border-radius: 15px;
       margin-left: 10px;
     
@@ -99,9 +99,175 @@ margin-left: 10px;}
     .margin-top {
       margin-top: -40px;
     }
+    
+
+
+
+/* Responsive Design Add-on */
+@media (max-width: 1200px) {
+  .vp {
+    left: 50%;
+    transform: translateX(-50%);
+    flex-wrap: wrap;
+  }
+
+  .vp a {
+    display: inline-block;
+    margin: 5px;
+    font-size: 16px;
+  }
+
+  .po {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .bb, .k {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .vp {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vp a {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .container {
+    margin: 0 auto;
+    width: 120px;
+  }
+
+  footer {
+    padding: 20px;
+    margin: 0;
+  }
+
+  .d p {
+    padding: 0 10px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .vp a {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .container img {
+    width: 100px;
+    height: 100px;
+  }
+
+  footer p, .k {
+    font-size: 12px;
+  }
+
+  .d p {
+    font-size: 12px;
+  }
+}
+
+
+
+.search-bar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar input {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 30px 0 0 30px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.search-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-radius: 0 30px 30px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+  background-color: #e0e0e0;
+}
+
+
+
+
+.single-post {
+  border: 1px solid #eee;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #fafafa;
+}
+
+
+
+
+  #suggestionsList {
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    max-width: 200px;
+    background: #fff;
+    position: absolute;
+    z-index: 100;
+  }
+
+  #suggestionsList li {
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  #suggestionsList li:hover {
+    background: #eee;
+  }
+
+
+
+
+p{
+  text-align: center;
+  text-transform: lowercase;
+  text-decoration: none;
+}
+
+
   </style>
+
+
+
+  
 </head>
 <body>
+<div id="loader">
+    <h2>Loading...</h2>
+</div>
+
+<div id="main-content" style="display: none;">
 
   
    
@@ -120,22 +286,45 @@ margin-left: 10px;}
     </div>
   </div>
 
+
+  
+
+
+
   <header>
-    <form class="search-bar" action="https://www.google.com/search" method="get">
-      <input type="text" placeholder="Search anything..." name="q" />
-      <button type="submit">Search</button>
-    </form>
+    
+    
+  <div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Search blog posts...">
+  <button class="search-btn" onclick="performSearch()">🔍</button>
+  <ul id="suggestionsList"></ul>
+
+</div>
+
+</div>
+
+
+
   </header>
 
+  
+
+
   <div class="download">
-    <h3>Upload Images</h3>
+    <h5>Upload Images</h5>
     <input type="file" id="fileInput" multiple accept="image/*">
     <div class="preview" id="previewArea"></div>
     <button class="btn-download" onclick="downloadImages()">Download</button>
   </div>
 
   <div class="post-section">
-    <h3>Create Blog Post</h3>
+
+
+    <p>Create Blog Post</p>
+    <p>if you like some image on our blog post you can click ligth side,
+       then you shoosen some image you like if you need to save on your gallery,
+       then after you download it  keep on your file </p>
+
     <textarea id="postContent" placeholder="Write your blog post here..."></textarea><br>
     <button class="btn-post" onclick="postBlog()">Post</button>
     <button class="btn-delete" onclick="clearAllPosts()">Clear All</button>
@@ -144,6 +333,11 @@ margin-left: 10px;}
 
   
   <script src="../js.js/extension.js"></script>
+ 
+    
+
+
+
 
 </body>
 </html>
