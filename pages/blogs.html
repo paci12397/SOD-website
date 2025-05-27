@@ -255,6 +255,12 @@ p{
   text-decoration: none;
 }
 
+h3{
+  text-align: center;
+  text-transform: lowercase;
+  text-decoration:#f1f1f1 ;
+}
+
 
   </style>
 
@@ -264,7 +270,7 @@ p{
 </head>
 <body>
 <div id="loader">
-    <h2>Loading...</h2>
+    <h3>Loading...</h3>
 </div>
 
 <div id="main-content" style="display: none;">
@@ -289,6 +295,21 @@ p{
 
   
 
+<div class="ld">
+
+  
+    
+    <p>if you like some image on our blog post you can click right side,
+       then you shoosen some image you like
+        if you need to save on your gallery,
+       then after you download it  keep on your file 
+      ,this blog Post they have unique on the search if you need to search
+    some thing about on our website you Write by ex:about,skills,etc... you see about
+   related our website information,after when you need to access onther website
+  you write name of website you need to access by ex:twitter,facebook,instagram
+etc...</p><br>
+
+</div>
 
 
   <header>
@@ -298,17 +319,12 @@ p{
   <input type="text" id="searchInput" placeholder="Search blog posts...">
   <button class="search-btn" onclick="performSearch()">🔍</button>
   <ul id="suggestionsList"></ul>
-
 </div>
 
-</div>
 
 
 
   </header>
-
-  
-
 
   <div class="download">
     <h5>Upload Images</h5>
@@ -320,10 +336,7 @@ p{
   <div class="post-section">
 
 
-    <p>Create Blog Post</p>
-    <p>if you like some image on our blog post you can click ligth side,
-       then you shoosen some image you like if you need to save on your gallery,
-       then after you download it  keep on your file </p>
+    <p>Create Blog Post</p><br>
 
     <textarea id="postContent" placeholder="Write your blog post here..."></textarea><br>
     <button class="btn-post" onclick="postBlog()">Post</button>
@@ -334,10 +347,5 @@ p{
   
   <script src="../js.js/extension.js"></script>
  
-    
-
-
-
-
 </body>
 </html>
