@@ -1,24 +1,39 @@
- document.getElementById("signupForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const name = document.getElementById("mushimirepacifique").value;
-      const email = document.getElementById("pacy@gmail.com").value;
-      const license = document.getElementById("12345").value;
-      const password = document.getElementById("gihogwe").value;
-
-      if (name && email && license && password) {
-        document.getElementById("message").style.color = "green";
-        document.getElementById("message").textContent = "Signed up successfully!";
-        setTimeout(() => {
-          window.location.href = "login.html"; // Redirect after 1 second
-        }, );
-      } else {
-        document.getElementById("message").style.color = "red";
-        document.getElementById("message").textContent = "Please fill all fields.";
-      }
-    });
 
 
+  document.getElementById("signupForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const fullName = document.getElementById("fullName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const license = document.getElementById("license").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const message = document.getElementById("message");
+
+    if (!fullName || !email || !license || !password) {
+      message.textContent = "Please fill in all fields.";
+      message.style.color = "red";
+      return;
+    }
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    const userExists = users.some(user => user.email === email);
+    if (userExists) {
+      message.textContent = "This email is already registered.";
+      message.style.color = "red";
+      return;
+    }
+
+    users.push({ fullName, email, license, password });
+    localStorage.setItem("users", JSON.stringify(users));
+
+    message.textContent = "Account created successfully! Redirecting...";
+    message.style.color = "green";
+
+    setTimeout(() => {
+      window.location.href = "login.html";
+    }, 2000);
+  });
 
     
   // Wait for page load

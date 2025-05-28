@@ -1,22 +1,26 @@
- document.getElementById("loginForm").addEventListener("submit", function (e) {
-      e.preventDefault();
 
-      const email = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value.trim();
-      const errorMessage = document.getElementById("error-message");
+  // login 
+  document.getElementById("loginForm").addEventListener("submit", function (e) {
+    e.preventDefault();
 
-      if (!email || !password) {
-        errorMessage.textContent = "All fields are required.";
-        return;
-      }
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const errorMessage = document.getElementById("error-message");
 
-      if (email === "mushimirepacifique@gmail.com" && password === "pacy@123") {
-        errorMessage.textContent = "";
-        window.location.href = "home.html";
-      } else {
-        errorMessage.textContent = "Invalid email or password.";
-      }
-    });
+    // Fetch users from localStorage
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+
+    // Check for matching user
+    const validUser = users.find(user => user.email === email && user.password === password);
+
+    if (validUser) {
+      errorMessage.textContent = "";
+      alert("Login successful!");
+      window.location.href = "home.html"; // Replace with your actual home page
+    } else {
+      errorMessage.textContent = "Invalid email or password.";
+    }
+  });
 
 
     
@@ -26,5 +30,5 @@
     setTimeout(function () {
       document.getElementById("loader").style.display = "none";
       document.getElementById("main-content").style.display = "block";
-    }, 2000); // 2000 milliseconds = 2 seconds
+    }, 200); // 2000 milliseconds = 2 seconds
   });
