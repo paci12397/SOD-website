@@ -1,35 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-   <link rel="stylesheet" href="ccs.css">
-   <form action="https://www.google.com/search" method="get" class="search-bar">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog Post</title>
+  <link rel="stylesheet" href="../css.css">
+  <style>
+.container{
+    position: relative;
+     padding: 0px; 
+    margin-top: -200px;
+    left: 0;
+    right: 0;
+    width: 150px;
+    height: auto;
+
+margin-left: 10px;}
+
+    
+    .vp {
+      padding: 10px;
+      text-align: center;
+      position: fixed; 
+      top: 0px; 
+      left: 800px;    
+      z-index: 100px;
+      font-size: large;
+      margin-left: 20px;
+      
+    }
+    .vp a {
+      padding: 10px;
+      position: relative;
+      color:black;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    body {
+      background-color: white;
+    }
+    header {
+      background-color: white;
+      padding: 10px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #ccc;
+    }
+    .search-bar input {
+      border-radius: 25px;
+      padding: 8px 15px;
+      width: 230px;
+    }
+    .upload-section, .post-section {
+      background: rgb(255, 255, 255);
+      padding: 40px;
+      margin: 25px;
+      border-radius: 15px;
+      margin-left: 10px;
+    
+    }
+    .preview {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .preview img, .preview video {
+      width: 120px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      border-radius: 5px;
+      padding: 10px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 8px 20px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-download { background: #28a745; color: white; }
+    .btn-post { background: blue; color: white; }
+    
+    .gallery { margin-top: 20px; }
+    .download { margin-left: 100px; }
+    .action-buttons button {
+      margin-right: 5px;
+      background-color: #eee;
+    }
+    .margin-top {
+      margin-top: -40px;
+    }
     
 
+
+
+/* Responsive Design Add-on */
+@media (max-width: 1200px) {
+  .vp {
+    left: 50%;
+    transform: translateX(-50%);
+    flex-wrap: wrap;
+  }
+
+  .vp a {
+    display: inline-block;
+    margin: 5px;
+    font-size: 16px;
+  }
+
+  .po {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .bb, .k {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .vp {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vp a {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .container {
+    margin: 0 auto;
+    width: 120px;
+  }
+
+  footer {
+    padding: 20px;
+    margin: 0;
+  }
+
+  .d p {
+    padding: 0 10px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .vp a {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .container img {
+    width: 100px;
+    height: 100px;
+  }
+
+  footer p, .k {
+    font-size: 12px;
+  }
+
+  .d p {
+    font-size: 12px;
+  }
+}
+
+
+
+.search-bar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 290f264412c0cc3d73441fdaf17db261a6c287cc
+  
+}
+
+.search-bar input {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 30px 0 0 30px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.search-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-radius: 0 30px 30px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+  background-color: #e0e0e0;
+}
+
+
+
+
+.single-post {
+  border: 1px solid #eee;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #fafafa;
+}
+
+
+
+
+  #suggestionsList {
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    max-width: 200px;
+    background: #fff;
+    position: absolute;
+    z-index: 100;
+  }
+
+  #suggestionsList li {
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  #suggestionsList li:hover {
+    background: #eee;
+  }
+
+
+
+
+p{
+  text-align: center;
+  text-transform: lowercase;
+  text-decoration: none;
+}
+
+h3{
+   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:  #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  z-index: 9999;
+  text-align: center;
+  text-transform: lowercase;
+  text-decoration:#f1f1f1 ;
+}
+
+
+  </style>
+
+
+
+  
 </head>
 <body>
-    <center>
-    <header>
-        
-           
-        
+<div id="loader">
+    <h3>Loading...</h3>
+</div>
+
+<div id="main-content" style="display: none;">
+
+  
+   
+
+  <div class="upload-section">
+<img src="../assets/Capture d'écran 2025-05-06 031823.png" alt="my image" width="140" height="140" class="margin-top">
+
+    <div class="vp" style="margin-top: 40px; margin-left: -50px;">
+<<<<<<< HEAD
+      <a href="/index.html">home</a>
+=======
+      <a href="home.html">home</a>
+>>>>>>> 290f264412c0cc3d73441fdaf17db261a6c287cc
+      <a href="about.html">about</a>
+      <a href="skills.html">skills</a>
+      <a href="contact.html">contact</a>
+      <a href="login.html">login</a>
+      <a href="blogs.html">blogs</a>
+      <a href="sign-up.html">Sign-Up</a>
+    </div>
+  </div>
+
+
+  
+
+<div class="ld">
+
+  
     
-        <span class="x"></span>
-        <input type="text" class="search-input" placeholder="search anything" name="q">
-        <span class="search-icon"></span>
-        <button type="submit">Search</button><br><br><br><br>
-        
-            <img src="../assets/g.jpeg" alt="my image"  height="100px" width="100px">
-            <footer>
-            <button class="Delete">Delete</button>
-            <button click="Post">post</button>
-        </footer>
-        </div>
-    </header>
+    <p>if you like some image on our blog post you can click right side,
+       then you shoosen some image you like
+        if you need to save on your gallery,<br></br>
+       then after you download it  keep on your file 
+      ,this blog Post they have unique on the search if you need to search
+    some thing about on our website you Write by ex:about,skills,etc...
+    <br>
+  you see about related our website information,after when you need to access onther website
+  you write name of website you need to access by ex:twitter,facebook,instagram
+etc...</p><br>
+
+</div>
 
 
-</center>
+  <header>
+    
+    
+  <div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Search blog posts...">
+  <button class="search-btn" onclick="performSearch()">🔍</button>
+  <ul id="suggestionsList"></ul>
+</div>
+
+
+
+
+  </header>
+
+  <div class="download">
+    <h5>Upload Images</h5>
+    <input type="file" id="fileInput" multiple accept="image/*">
+    <div class="preview" id="previewArea"></div>
+    <button class="btn-download" onclick="downloadImages()">Download</button>
+  </div>
+
+  <div class="post-section">
+
+
+    <p>Create Blog Post</p><br>
+
+    <textarea id="postContent" placeholder="Write your blog post here..."></textarea><br>
+    <button class="btn-post" onclick="postBlog()">Post</button>
+    <button class="btn-delete" onclick="clearAllPosts()">Clear All</button>
+    <div class="gallery" id="blogPosts"></div>
+  </div>
+
+  
+  <script src="../js.js/extension.js"></script>
+ 
 </body>
 </html>

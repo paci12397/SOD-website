@@ -1,41 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-    <form action="https://www.google.com/search" method="get" class="search-bar">
-    
-    <style>
-nav {
-   gap: 60px;
-    margin-bottom: 20px;
-    grid-area: auto;
-    text-align: center;
-   
-}
-button{
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
 
-    border-radius: 70px;
-}
-input{
-    border-radius: 70px;
-    width: 200px;
-    height: 30px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-    </style>
-</head>
-</body>
-    <center>
-    <h1>login</h1>
-        <label for="email">email</label>
-        <input type="text"email="email"><br><br>
-        <label for="password">password</label>
-        <input type="text"password="password"><br><br>
-    <button type="login">login</button>
+    body {
+      background-color: white;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
     
-    </center>
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+     .vp {
+            
+    background-color:white;
+padding: 10px;
+    text-align: center;
+     position: fixed; 
+     top: 0px; 
+    left: 600px;    
+    z-index: 100px;
+    font-size: smaller;
+    margin-left: 200px;
+    margin-top: 40px;
+  } 
+
+ .vp a { 
+    background-color: white;
+    padding: 10px;
+position: relative;
+margin-top: 0%;
+top: 0%;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+font-size: small;
+
+ }
+
+    h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: blue;
+    }
+
+    #error-message {
+      color: red;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    h6 {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+
+
+
+
+/* Responsive Design Add-on */
+@media (max-width: 1200px) {
+  .vp {
+    left: 50%;
+    transform: translateX(-50%);
+    flex-wrap: wrap;
+  }
+
+  .vp a {
+    display: inline-block;
+    margin: 5px;
+    font-size: 16px;
+  }
+
+  .po {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .bb, .k {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .vp {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vp a {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .container {
+    margin: 0 auto;
+    width: 120px;
+  }
+
+  footer {
+    padding: 20px;
+    margin: 0;
+  }
+
+  .d p {
+    padding: 0 10px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .vp a {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .container img {
+    width: 100px;
+    height: 100px;
+  }
+
+  footer p, .k {
+    font-size: 12px;
+  }
+
+  .d p {
+    font-size: 12px;
+  }
+}
+
+
+
+h3  { position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:  #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  z-index: 9999;
+  text-align: center;
+  text-transform: lowercase;
+  text-decoration:#f1f1f1 ;
+}
+
+
+
+@media (max-width: 1200px) {
+  .vp {
+    left: 50%;
+    transform: translateX(-50%);
+    flex-wrap: wrap;
+  }
+
+  .vp a {
+    display: inline-block;
+    margin: 5px;
+    font-size: 16px;
+  }
+
+  .po {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .bb, .k {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .vp {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vp a {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .container {
+    margin: 0 auto;
+    width: 120px;
+  }
+
+  footer {
+    padding: 20px;
+    margin: 0;
+  }
+
+  .d p {
+    padding: 0 10px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .vp a {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .container img {
+    width: 100px;
+    height: 100px;
+  }
+
+  footer p, .k {
+    font-size: 12px;
+  }
+
+  .d p {
+    font-size: 12px;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  <div id="loader">
+    <h3>Loading...</h3>
+</div>
+
+<div class="vp">
+<<<<<<< HEAD
+      <a href="/index.html">home</a>
+=======
+      <a href="home.html">home</a>
+>>>>>>> 290f264412c0cc3d73441fdaf17db261a6c287cc
+      <a href="about.html">about</a>
+      <a href="skills.html">skills</a>
+      <a href="contact.html">contact</a>
+      <a href="login.html">login</a>
+      <a href="blogs.html">blogs</a>
+      <a href="sign-up.html">Sign-Up</a>
+    </div>
+
+    
+    </div>
+<div class="login-container">
+    
+    <form id="loginForm">
+      <h2>Login</h2>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required />
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required />
+      </div>
+      <button type="submit">Login</button>
+      <h6>Please, if you don't have an account, click on Sign-Up to create one.</h6>
+      <p id="error-message"></p>
+    </form>
+  </div>
+
+  
+  <script src="../js.js/script.js"></script>  
+
+
+
+  
 </body>
 </html>

@@ -1,60 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        nav {
-            background-color:white;
-            padding: 10px;
-            text-align: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;    
-            z-index: 1000;
-          }
-          
-          nav a {
-            color: black;
-            margin:15px;
-            text-decoration: none;
-            font-weight: bold;
-          }
-        h1{
-            text-align: center;
-            text-transform: lowercase;
-            text-decoration: none;
-        }
-        form{
-            text-align: center;
-            text-transform: lowercase;
-            text-decoration: none;
-        }
-        form input{
-            text-align: center;
-            text-transform: lowercase;
-            text-decoration: none;
-        }
-        form button{
-            text-align: center;
-            text-transform: lowercase;
-            text-decoration: none;
-            /* display: flex; */
-            margin: 0 auto;
-            position: relative;
-            left:0;
-            right: 100px;
-            width: 5%;
-            padding:  0 auto;
-            top: 100px;
+  <title>Contact Form</title>
+  <style>
+
+  
 
 
-        }
+.vp {
+    /* background-color:black; */
+padding: 10px;
+    text-align: center;
+     position: fixed; 
+     top: 0px; 
+    left: 800px;    
+    z-index: 100px;
+    font-size: small;
+    margin-left: 20px;
+    
+  }
+  .vp a {
+    /* background-color:black; */
+    padding: 10px;
+position: relative;
+margin-top: 0%;
+top: 0%;
+    color:black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: small;
 
-    </style>
+  }
 
+
+
+
+
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color:white;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      margin: auto;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+
+    }
+
+    button {
+      background-color: blue;
+      color: white;
+      border: none;
+    }
+
+    button:hover {
+      background-color:blue;
+    }
+
+
+/* Responsive Design Add-on */
+@media (max-width: 1200px) {
+  .vp {
+    left: 50%;
+    transform: translateX(-50%);
+    flex-wrap: wrap;
+  }
+
+  .vp a {
+    display: inline-block;
+    margin: 5px;
+    font-size: 16px;
+  }
+
+  .po {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .bb, .k {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .vp {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vp a {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .container {
+    margin: 0 auto;
+    width: 120px;
+  }
+
+  footer {
+    padding: 20px;
+    margin: 0;
+  }
+
+  .d p {
+    padding: 0 10px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .vp a {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .container img {
+    width: 100px;
+    height: 100px;
+  }
+
+  footer p, .k {
+    font-size: 12px;
+  }
+
+  .d p {
+    font-size: 12px;
+  }
+}
+
+
+  </style>
 </head>
 <body>
     <article>
@@ -67,6 +162,7 @@
     <input type="text" submit="email" placeholder="email">
     <h5>contact: 0786099315</h5>
     <h5>Email:mushimirepacifique78@gmail.come</h5>
+    
     
 </article>
 
